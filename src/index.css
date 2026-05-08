@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+:root {
+    --background: #1A1A1A;
+    --background-hover: #2A2A2A;
+    --main-text-size: 18px;
+    --main-text-color: #ffffff;
+    --button-color-default: #ec032a;
+    --button-color-default-hover: #8d0137;
+    --acent-main-text-color: #696969;
+    --h1-size: 40px;
+    --h2-size: 24px;
+    --border-color: #8d0137;
+}
