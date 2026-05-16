@@ -1,7 +1,8 @@
-import { useMemo, useRef, useState } from "react"
+import { Fragment, useMemo, useRef, useState } from "react"
 import Header from "../../feature/header/header"
 import ButtonDefault from "../../shared/ui/ButtonDefault/ButtonDefault"
 import MiniCard from "../../shared/ui/MiniCard/MiniCard"
+import Separetor from "../../shared/ui/Separetor/Separetor"
 import ScrolButton from "../../shared/ui/ScrolButton/ScrolButton"
 import { KillerPreview } from "../../shared/ui/KillerPreview/KillerPreview"
 import { homeKillerMiniCardsMock } from "../../shared/mocks/homeKillerMiniCardsMock"
@@ -37,7 +38,7 @@ export default function HomePage() {
                 <h1 className="w-[70%] text-[length:var(--h1-size)] text-[color:var(--main-text-color)] font-bold z-10">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
                 <h2 className="w-[70%] text-[length:var(--h2-size)] text-[color:var(--main-text-color)] font-bold z-10 mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis fugit eaque repellendus ex facere aspernatur fugiat eum voluptatem non beatae, quas dolorem excepturi blanditiis modi. Mollitia quos dolorum voluptas cum officia facere harum velit laudantium!</h2>
             </div>
-            <div className="absolute flex gap-[40px] left-[38%] top-[70%]">
+            <div className="absolute flex gap-[40px] left-[41%] top-[70%]">
             <ButtonDefault
                 type="button"
                 name="Profile"
@@ -54,7 +55,7 @@ export default function HomePage() {
             </ButtonDefault>
             </div>
             <div>
-                <img className="max-h-[600px] w-full object-cover" src="src\shared\assets\images\bb59facee0955f5588e5384f038574d6689dd4a0.png" alt="Воронье гнездовье" />
+                <img className="max-h-[600px] w-full object-cover" src="src\shared\assets\images\EyeOfCrow.png" alt="Воронье гнездовье" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent"></div>
             </div>
         </section>
@@ -63,19 +64,22 @@ export default function HomePage() {
                 <ScrolButton direction="left" onClick={() => handleCardsScroll("left")} />
                 <ScrolButton direction="right" onClick={() => handleCardsScroll("right")} />
             </div>
-            <div ref={cardsWrapperRef} className="flex gap-4 overflow-x-auto scroll-smooth pb-4 max-w-[932px] mx-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            <div ref={cardsWrapperRef} className="flex items-stretch overflow-x-auto scroll-smooth pb-4 max-w-[810px] mx-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                 {homeKillerMiniCardsMock.map((card, index) => (
-                    <div key={`${card.killerId}-${index}`} className="shrink-0">
-                        <MiniCard
-                            src={card.src}
-                            alt={card.alt}
-                            title={card.title}
-                            border={card.border}
-                            onClick={() => setSelectedKillerId(card.killerId)}
-                        >
-                            {card.teaser}
-                        </MiniCard>
-                    </div>
+                    <Fragment key={`${card.killerId}-${index}`}>
+                        {index > 0 && <Separetor />}
+                        <div className="shrink-0">
+                            <MiniCard
+                                src={card.src}
+                                alt={card.alt}
+                                title={card.title}
+                                border={card.border}
+                                onClick={() => setSelectedKillerId(card.killerId)}
+                            >
+                                {card.teaser}
+                            </MiniCard>
+                        </div>
+                    </Fragment>
                 ))}
             </div>
         </section>

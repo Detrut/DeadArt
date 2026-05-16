@@ -23,34 +23,25 @@ export interface KillerComponentProps {
   data: KillerPreviewData;
 }
 
+/** Один перк в данных превью: `key` = `KillerPreviewData.id` (тот же, что `killerId` у Minicard). */
+export interface KillerPerkEntry {
+  id: string;
+  key: string;
+  title: string;
+  image: string;
+  description: string;
+}
+
 export interface KillerPreviewData {
   id: string;
   name: string;
   image: string;
   description: string;
+  hints: string;
   difficulty: number;
   mobility: number;
   control: number;
   info: number;
-  perks:[
-    {
-      id: string;
-      title: string;
-      image: string;
-      description: string;
-    },
-    {
-      id: string;
-      title: string;
-      image: string;
-      description: string;
-    },
-    {
-      id: string;
-      title: string;
-      image: string;
-      description: string;
-    }
-  ];
+  perks: KillerPerkEntry[];
   children?: React.ReactNode;
 }

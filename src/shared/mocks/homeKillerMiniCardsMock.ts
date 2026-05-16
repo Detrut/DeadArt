@@ -1,6 +1,4 @@
-/**
- * Карточки на главной: визуал и текст слота + `killerId` из `killersPreviewMockList`.
- */
+import { powerImg } from "@assets/images/KillerImagesAll.ts";
 
 export interface HomeKillerMiniCardMock {
     killerId: string;
@@ -14,42 +12,42 @@ export interface HomeKillerMiniCardMock {
 export const homeKillerMiniCardsMock: HomeKillerMiniCardMock[] = [
     {
         killerId: "1",
-        src: "src\\shared\\assets\\images\\IconPowers_birdsOfTorment (2).png",
-        alt: "Сила: вороны",
-        title: "The Artist — вороны",
-        teaser: "Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit.",
+        src: powerImg("T_iconPowers_birdsOfTorment"),
+        alt: "Сила: Художница",
+        title: "The Artist — Художница",
+        teaser: "Терзающие птицы - отличный вариант для сильного контроля карты и закрытия лупов",
         border: false,
     },
     {
         killerId: "2",
-        src: "src\\shared\\assets\\images\\bb59facee0955f5588e5384f038574d6689dd4a0.png",
-        alt: "Промо-кадр",
-        title: "The Dark Lord — тёмный лорд",
-        teaser: "Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit.",
+        src: powerImg("iconPowers_K37_Shapeshift"),
+        alt: "Сила: Дракула",
+        title: "The Dark Lord — Тёмный лорд",
+        teaser: "Смена облика - высокая мобильность и возможность быстро сокращать дистанцию",
         border: true,
     },
     {
         killerId: "3",
-        src: "src\\shared\\assets\\images\\Artist.jpg",
-        alt: "Портрет убийцы",
-        title: "The Singularity — сингулярность",
-        teaser: "Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit.",
+        src: powerImg("iconPowers_quantumInstantiation"),
+        alt: "Сила: Сингулярность",
+        title: "The Singularity — Сингулярность",
+        teaser: "Квантовый скачок - большое давление на карту, а так же контроль генераторов",
         border: true,
     },
     {
         killerId: "4",
-        src: "src\\shared\\assets\\images\\IconPowers_birdsOfTorment (2).png",
-        alt: "Иконка силы",
-        title: "The Wrath — призрак",
-        teaser: "Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit.",
+        src: powerImg("iconPowers_bell"),
+        alt: "Сила: Колокол",
+        title: "The Wrath — Призрак",
+        teaser: "Колокол - возможность контролировать повешенных и быстро выводить их из игры",
         border: true,
     },
     {
         killerId: "5",
-        src: "src\\shared\\assets\\images\\bb59facee0955f5588e5384f038574d6689dd4a0.png",
-        alt: "Атмосфера",
-        title: "The Lich — лич",
-        teaser: "Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit.",
+        src: powerImg("iconPowers_VileDarkness"),
+        alt: "Сила: Лич",
+        title: "The Lich — Лич",
+        teaser: "Гримуар - универсальное решение для погони и сбора информации по карте",
         border: true,
     },
 ];
